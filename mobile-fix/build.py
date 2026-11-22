@@ -43,13 +43,13 @@ def header(active=""):
 <header class="masthead">
   <div class="wrap">
     <div class="masthead-info">
-      <div>Kantor Pusat, Kambalan Kebumen</div>
+      <div>Kantor Pusat, Ambal Kebumen</div>
       <div class="phone-big">{PHONE_DISPLAY}</div>
     </div>
     <div class="brand">
       <div class="brand-mark"><img src="assets/logo-icon.png" alt="Logo BMT Barokatul Adzkia"></div>
       <div class="brand-text">
-        <h1>KSPPS BMT Barokatul Adzkia Kebumen</h1>
+        <h1>KSPPS BMT Barokatul Adzkia</h1>
         <p>Menuai Berkah Dengan Syariah</p>
       </div>
     </div>
@@ -63,6 +63,7 @@ def header(active=""):
 <nav class="mainnav">
   <div class="wrap">
   <div class="nav-inner">
+    <a class="nav-brand" href="index.html"><img src="assets/logo-icon.png" alt=""><span>KSPPS BMT Barokatul Adzkia</span></a>
     <button class="navbar-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">☰</button>
     <ul class="nav-list" id="navList">
       <li><a href="index.html"{cls('beranda')}>Beranda</a></li>
@@ -148,7 +149,7 @@ FOOTER = f"""<footer>
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <h4>KSPPS BMT Barokatul Adzkia Kebumen</h4>
+        <h4>KSPPS BMT Barokatul Adzkia</h4>
         <p>Jl. Raya Kambalan, RT 02 RW 04, Kembangsawit, Kec. Ambal, Kab. Kebumen, Prov. Jawa Tengah</p>
         <p><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a></p>
         <p><a href="mailto:{EMAIL}">{EMAIL}</a></p>
@@ -174,6 +175,7 @@ FOOTER = f"""<footer>
   </div>
 </footer>
 
+<a class="wa-float" href="{WA_LINK}" target="_blank" rel="noopener" aria-label="Chat WhatsApp"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.43 15.1L2 22l5.05-1.32A9.93 9.93 0 1 0 12.04 2zm0 1.8a8.13 8.13 0 1 1-4.15 15.14l-.3-.18-3 .78.8-2.92-.2-.3A8.13 8.13 0 0 1 12.04 3.8zM8.6 7.5c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.06 3.3 5.1 4.5 2.52 1 3.03.8 3.57.75.55-.05 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35s-1.76-.87-2.03-.97c-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57z"/></svg></a>
 <script src="js/site.js"></script>
 </body>
 </html>"""
@@ -205,17 +207,17 @@ index_body = f"""
     <div class="wrap">
       <div>
         <div class="hero-eyebrow">Koperasi Simpan Pinjam Pembiayaan Syariah</div>
-        <h2>Melayani anggota di Kambalan, Kebumen. Dengan Prinsip Keuangan Syariah Berdiri Sejak 1997.</h2>
-        <p class="lead">Amanah, Profesional, dan Mandiri. Dari Anggota, Oleh Anggota, Untuk Anggota. Simpanan dan pembiayaan dijalankan sesuai akad syariah.</p>
+        <h2>Melayani anggota di Ambal, Kebumen dengan prinsip keuangan syariah sejak berdiri.</h2>
+        <p class="lead">Amanah, profesional, dan mandiri — dari anggota, oleh anggota, untuk anggota. Simpanan dan pembiayaan dijalankan sesuai akad syariah.</p>
         <div class="cc-buttons">
           <a class="cc-btn solid" href="{WA_LINK}" target="_blank">Hubungi via WhatsApp</a>
           <a class="cc-btn" href="produk.html">Lihat produk kami</a>
         </div>
-        <p class="warn">Hati-hati terhadap penipuan yang mengatasnamakan KSPPS BMT Barokatul Adzkia Kebumen.</p>
+        <p class="warn">Hati-hati terhadap penipuan yang mengatasnamakan KSPPS BMT Barokatul Adzkia.</p>
         <div class="hero-slider" id="heroSlider">
           <div class="hero-slide active">
             <h3>Amanah &middot; Profesional &middot; Mandiri</h3>
-            <p>Menjadi lembaga keuangan syariah yang bermanfaat bagi umat di Kabupaten Kebumen.</p>
+            <p>Menjadi lembaga keuangan syariah yang bermanfaat bagi umat di Ambal dan sekitarnya.</p>
           </div>
           <div class="hero-slide">
             <h3>Simpanan &amp; Pembiayaan Syariah</h3>
@@ -223,7 +225,7 @@ index_body = f"""
           </div>
           <div class="hero-slide">
             <h3>Dari Anggota, Oleh Anggota, Untuk Anggota</h3>
-            <p>Dikelola secara Profesional, Efektif, Efisien, dan Transparan.</p>
+            <p>Dikelola secara profesional, efektif, efisien, dan transparan.</p>
           </div>
         </div>
       </div>
@@ -243,8 +245,8 @@ index_body = f"""
     <div class="wrap">
       <div class="section-head">
         <div class="kicker">Profil Koperasi</div>
-        <h2>Mengenal KSPPS BMT Barokatul Adzkia Kebumen</h2>
-        <p>Lembaga keuangan mikro syariah yang melayani anggota di Kambalan, Kebumen. Amanah, Profesional, Dan Mandiri.</p>
+        <h2>Mengenal KSPPS BMT Barokatul Adzkia</h2>
+        <p>Lembaga keuangan mikro syariah yang melayani anggota di Ambal, Kebumen — amanah, profesional, dan mandiri.</p>
       </div>
       <a class="cc-btn" style="border-color:var(--blue);color:var(--blue)" href="profil.html">Lihat profil lengkap</a>
     </div>
@@ -259,7 +261,7 @@ index_body = f"""
       <div class="why-grid">
         <div class="why-card"><h3>Sesuai prinsip syariah</h3><p>Seluruh produk simpanan dan pembiayaan dijalankan berdasarkan akad syariah.</p></div>
         <div class="why-card"><h3>Dekat dengan anggota</h3><p>Melayani langsung masyarakat di wilayah Ambal, Kebumen dan sekitarnya.</p></div>
-        <div class="why-card"><h3>Pelayanan profesional</h3><p>Dikelola secara Efektif, Efisien, dan Transparan sesuai jati diri Koperasi.</p></div>
+        <div class="why-card"><h3>Pelayanan profesional</h3><p>Dikelola secara efektif, efisien, dan transparan sesuai jati diri koperasi.</p></div>
       </div>
     </div>
   </section>
@@ -280,38 +282,38 @@ index_body = f"""
 # ---------------------------------------------------------------------------
 profil_body = f"""
 {crumb([("Beranda","index.html"),("Profil Koperasi",None)])}
-{page_head_block("Profil Koperasi", "Mengenal lebih dekat KSPPS BMT Barokatul Adzkia Kebumen. Legalitas, Arah lembaga, dan Perjalanannya.")}
+{page_head_block("Profil Koperasi", "Mengenal lebih dekat KSPPS BMT Barokatul Adzkia — legalitas, arah lembaga, dan perjalanannya.")}
   <section>
     <div class="wrap">
       <div class="hub-grid">
         <div class="hub-card">
           <div class="kicker">Profil Lembaga</div>
           <h3>Tentang Kami</h3>
-          <p>Nama lembaga, alamat kantor, dan kontak resmi KSPPS BMT Barokatul Adzkia Kebumen.</p>
+          <p>Nama lembaga, alamat kantor, dan kontak resmi KSPPS BMT Barokatul Adzkia.</p>
           <a class="more" href="tentang-kami.html">Selengkapnya</a>
         </div>
         <div class="hub-card">
           <div class="kicker">Profil / Badan Hukum</div>
           <h3>Legalitas</h3>
-          <p>Data badan hukum dan penghargaan KSPPS BMT Barokatul Adzkia Kebumen.</p>
+          <p>Data badan hukum dan penghargaan KSPPS BMT Barokatul Adzkia.</p>
           <a class="more" href="legalitas.html">Selengkapnya</a>
         </div>
         <div class="hub-card">
           <div class="kicker">Arah Lembaga</div>
           <h3>Visi &amp; Misi</h3>
-          <p>Motto, visi, dan misi yang menjadi pedoman arah KSPPS BMT Barokatul Adzkia Kebumen dalam melayani Anggota.</p>
+          <p>Motto, visi, dan misi yang menjadi pedoman arah KSPPS BMT Barokatul Adzkia dalam melayani anggota.</p>
           <a class="more" href="visi-misi.html">Selengkapnya</a>
         </div>
         <div class="hub-card">
           <div class="kicker">Perjalanan Kami</div>
           <h3>Sejarah Perkembangan</h3>
-          <p>Linimasa perjalanan KSPPS BMT Barokatul Adzkia Kebumen sejak awal berdiri hingga saat ini.</p>
+          <p>Linimasa perjalanan KSPPS BMT Barokatul Adzkia sejak awal berdiri hingga saat ini.</p>
           <a class="more" href="sejarah.html">Selengkapnya</a>
         </div>
         <div class="hub-card">
           <div class="kicker">Jaringan Kantor</div>
           <h3>Kantor Cabang</h3>
-          <p>Daftar dan Lokasi Kantor Pusat, Kantor Cabang, dan Kantor Kas Kami.</p>
+          <p>Daftar dan lokasi kantor pusat, kantor cabang, dan kantor kas kami.</p>
           <a class="more" href="kantor-cabang.html">Selengkapnya</a>
         </div>
       </div>
@@ -337,9 +339,9 @@ tentang_body = f"""
           <p><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
         </div>
         <div>
-          <p>KSPPS BMT Barokatul Adzkia Kebumen berawal dari 40 anggota Ikatan Cendekiawan Muslim Indonesia (ICMI) yang mendirikan BMT di Kambalan, Ambal, pada Tahun 1997. Tokoh pendirinya adalah K.H. Mudhofir, B.A. Tujuan awalnya ialah memudahkan anggota dan menjauhkan mereka dari rentenir.</p>
-          <p>Modal awal dikumpulkan dari simpanan wajib Rp2.500 pada tahun pertama, sebelum lembaga berbadan hukum. BMT bertumbuh dari aset Rp500 ribu hingga kini memiliki sekitar Rp23 miliar.</p>
-          <p>Seiring berjalannya regulasi, lembaga ini berubah dari Koperasi Pondok Pesantre (Kopontren) menjadi BMT Barokatul Adzkia, KSPPS DAMBA, dan kini KSPPS BMT Barokatul Adzkia Kebumen yang beroperasi di tingkat Kabupaten. Perjalanan lengkapnya ada di halaman <a href="sejarah.html" style="color:var(--blue);font-weight:600">Sejarah</a>.</p>
+          <p>KSPPS BMT Barokatul Adzkia Kebumen berawal dari 40 anggota Ikatan Cendekiawan Muslim Indonesia (ICMI) yang mendirikan BMT di Kambalan, Ambal, pada 1997. Tokoh pendirinya adalah K.H. Mudhofir, B.A. Tujuan awalnya adalah memudahkan anggota dan menjauhkan mereka dari rentenir.</p>
+          <p>Modal awal dikumpulkan dari simpanan wajib Rp2.500 pada tahun pertama, sebelum lembaga berbadan hukum. BMT bertumbuh dari Rp500 ribu hingga kini memiliki aset sekitar Rp23 miliar.</p>
+          <p>Seiring berjalannya regulasi, lembaga ini berubah dari Kopontren menjadi BMT Barokatul Adzkia, KSPPS DAMBA, dan kini KSPPS BMT Barokatul Adzkia Kebumen yang beroperasi di tingkat kabupaten. Perjalanan lengkapnya ada di halaman <a href="sejarah.html" style="color:var(--blue);font-weight:600">Sejarah</a>.</p>
         </div>
       </div>
     </div>
@@ -354,7 +356,7 @@ tentang_body = f"""
       <div class="why-grid">
         <div class="why-card"><h3>Barokatul Adzkia</h3><p>Keberkahan orang-orang pandai, merujuk pada latar belakang pendirinya dari ICMI.</p></div>
         <div class="why-card"><h3>DAMBA</h3><p>Singkatan dari Darul Amwal.</p></div>
-        <div class="why-card"><h3>BMT</h3><p>Singkatan dari Baitul Maal At Tamwil. Baitul Maal berarti rumah harta dan At Tamwil secara harfiah ialah pembiayaan, pendanaan, atau pengembangan harta/modal.</p></div>
+        <div class="why-card"><h3>BMT</h3><p>Singkatan dari Baitul Maal wat Tamwil. Baitul berarti rumah.</p></div>
       </div>
       <p style="margin:34px 0 18px;color:var(--ink-soft)">Secara umum, sebuah BMT memiliki dua fungsi:</p>
       <div class="vm-grid">
@@ -382,9 +384,9 @@ tentang_body = f"""
       <div class="section-head">
         <div class="kicker">Struktur Kami</div>
         <h2>Pengurus dan Pengawas</h2>
-        <p>Jajaran pengurus dan pengawas KSPPS BMT Barokatul Adzkia Kebumen yang mengelola dan mengawasi jalannya koperasi.</p>
+        <p>Jajaran pengurus dan pengawas KSPPS BMT Barokatul Adzkia yang mengelola dan mengawasi jalannya koperasi.</p>
       </div>
-      <img src="assets/pengurus-bmt.png" alt="Pengurus dan pengawas KSPPS BMT Barokatul Adzkia Kebumen">
+      <img src="assets/pengurus-bmt.png" alt="Pengurus dan pengawas KSPPS BMT Barokatul Adzkia">
     </div>
   </section>
 """
@@ -394,9 +396,10 @@ tentang_body = f"""
 # ---------------------------------------------------------------------------
 legalitas_body = f"""
 {crumb([("Beranda","index.html"),("Profil Koperasi","profil.html"),("Legalitas",None)])}
-{page_head_block("Legalitas", "Data badan hukum dan penghargaan KSPPS BMT Barokatul Adzkia Kebumen.")}
+{page_head_block("Legalitas", "Data badan hukum dan penghargaan KSPPS BMT Barokatul Adzkia.")}
   <section>
     <div class="wrap">
+      <div class="info-note"><span>🔎</span><span>KSPPS BMT Barokatul Adzkia dapat diverifikasi lewat portal resmi Kementerian Koperasi: <strong>nik.depkop.go.id</strong>. Kalau sudah punya tautan verifikasi langsung ke data koperasi ini, kirimkan agar dipasang sebagai tautan langsung di halaman ini.</span></div>
 
       <div class="section-head" style="margin-bottom:18px">
         <div class="kicker">Profil / Badan Hukum</div>
@@ -405,7 +408,7 @@ legalitas_body = f"""
       </div>
       <table class="legal-table">
         <tr><th>Nama Badan Usaha</th><td>BMT Barokatul Adzkia Kebumen</td></tr>
-        <tr><th>Jenis Usaha</th><td class="field-empty">Koperasi Simpan Pinjam Syariah</td></tr>
+        <tr><th>Jenis Usaha</th><td>Koperasi Simpan Pinjam Syariah</td></tr>
         <tr><th>Tanggal Berdiri</th><td>16 Januari 1997 (1417 H)</td></tr>
         <tr><th>No. Badan Hukum</th><td>AHU-0000307.AH.01.38 Tahun 2023</td></tr>
         <tr><th>Akta Badan Hukum (1998)</th><td>No. 13619/BH/KWK.11/III/1998</td></tr>
@@ -460,7 +463,7 @@ legalitas_body = f"""
 # ---------------------------------------------------------------------------
 visimisi_body = f"""
 {crumb([("Beranda","index.html"),("Profil Koperasi","profil.html"),("Visi & Misi",None)])}
-{page_head_block("Visi & Misi", "Motto, visi, dan misi yang menjadi pedoman arah KSPPS BMT Barokatul Adzkia Kebumen.")}
+{page_head_block("Visi & Misi", "Motto, visi, dan misi yang menjadi pedoman arah KSPPS BMT Barokatul Adzkia.")}
   <section>
     <div class="wrap">
       <div class="motto-block">
@@ -474,7 +477,7 @@ visimisi_body = f"""
       <div class="vm-grid">
         <div class="vm-card">
           <h3>Visi</h3>
-          <p>Menjadikan KSPPS BMT Barokatul Adzkia Kebumen sebagai lembaga keuangan syariah yang Amanah, Profesional, Mandiri, Serta bermanfaat bagi Umat.</p>
+          <p>Menjadikan KSPPS BMT Barokatul Adzkia Kebumen sebagai lembaga keuangan syariah yang amanah, profesional, mandiri, serta bermanfaat bagi umat.</p>
         </div>
         <div class="vm-card">
           <h3>Misi</h3>
@@ -661,7 +664,6 @@ kantor_body = f"""
         <iframe title="Lokasi Kantor Pusat KSPPS BMT Barokatul Adzkia" loading="lazy"
           src="https://www.google.com/maps?q=Kembangsawit,+Ambal,+Kebumen&output=embed"></iframe>
       </div>
-      <div class="info-note" style="margin-top:20px"><span>📍</span><span>Kantor Cabang, Kantor Kas 1, dan Kantor Kas 2 belum punya titik peta — kirimkan tautan Google Maps masing-masing agar ditambahkan juga.</span></div>
     </div>
   </section>
 """

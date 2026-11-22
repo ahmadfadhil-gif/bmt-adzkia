@@ -94,6 +94,27 @@ document.addEventListener('DOMContentLoaded', function () {
   openFromHash();
   window.addEventListener('hashchange', openFromHash);
 
+  // Muncul halus saat digulir
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var targets = document.querySelectorAll(
+      '.section-head, .hero-slider, .product-card, .why-card, .hub-card, .vm-card, .award-card, ' +
+      '.founder, .syarat-card, .dl-item, .gal-item, .about-grid > *, .branch-table, .legal-table'
+    );
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    targets.forEach(function (el) {
+      var idx = Array.prototype.indexOf.call(el.parentElement.children, el);
+      el.style.setProperty('--d', Math.min(idx, 4) * 70 + 'ms');
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92) { el.classList.add('in'); }   // sudah terlihat: tampil langsung
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+  }
+
   // Pencarian sederhana di navbar
   var searchInput = document.getElementById('siteSearchInput');
   var searchBtn = document.getElementById('siteSearchBtn');
