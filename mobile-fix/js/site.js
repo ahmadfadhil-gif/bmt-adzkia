@@ -2,6 +2,24 @@ document.addEventListener('DOMContentLoaded', function () {
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Pastikan logo di bar menu (HP) dan tombol WhatsApp ada, walau HTML-nya versi lama
+  var navInner = document.querySelector('.nav-inner');
+  if (navInner && !navInner.querySelector('.nav-brand')) {
+    var nb = document.createElement('a');
+    nb.className = 'nav-brand'; nb.href = 'index.html';
+    nb.innerHTML = '<img src="assets/logo-icon.png" alt=""><span>KSPPS BMT Barokatul Adzkia</span>';
+    navInner.insertBefore(nb, navInner.firstChild);
+  }
+  if (!document.querySelector('.wa-float')) {
+    var wl = document.querySelector('a[href^="https://wa.me/"]');
+    var wa = document.createElement('a');
+    wa.className = 'wa-float'; wa.target = '_blank'; wa.rel = 'noopener';
+    wa.href = wl ? wl.href : 'https://wa.me/6285878755748';
+    wa.setAttribute('aria-label', 'Chat WhatsApp');
+    wa.innerHTML = '<svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.43 15.1L2 22l5.05-1.32A9.93 9.93 0 1 0 12.04 2zm0 1.8a8.13 8.13 0 1 1-4.15 15.14l-.3-.18-3 .78.8-2.92-.2-.3A8.13 8.13 0 0 1 12.04 3.8zM8.6 7.5c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.06 3.3 5.1 4.5 2.52 1 3.03.8 3.57.75.55-.05 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35s-1.76-.87-2.03-.97c-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57z"/></svg>';
+    document.body.appendChild(wa);
+  }
+
   // Menu seluler
   var toggle = document.getElementById('navToggle');
   var navList = document.getElementById('navList');
