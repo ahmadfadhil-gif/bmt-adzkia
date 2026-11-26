@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
   if (navInner && !navInner.querySelector('.nav-brand')) {
     var nb = document.createElement('a');
     nb.className = 'nav-brand'; nb.href = 'index.html';
-    nb.innerHTML = '<img src="assets/logo-icon.png" alt=""><span>KSPPS BMT Barokatul Adzkia</span>';
+    nb.setAttribute('aria-label', 'KSPPS BMT Barokatul Adzkia Kebumen');
+    nb.innerHTML = '<img class="nb-icon" src="assets/logo-icon.png" alt=""><img class="nb-word" src="assets/logo-wordmark.png" alt="BMT Barokatul Adzkia Kebumen">';
     navInner.insertBefore(nb, navInner.firstChild);
   }
   if (!document.querySelector('.wa-float')) {
