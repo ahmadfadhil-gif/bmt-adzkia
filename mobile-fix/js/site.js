@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
       { url: 'visi-misi.html',     keywords: ['visi misi', 'visi', 'misi', 'motto'] },
       { url: 'sejarah.html',       keywords: ['sejarah', 'linimasa', 'perkembangan'] },
       { url: 'kantor-cabang.html', keywords: ['kantor cabang', 'cabang', 'kantor kas', 'lokasi', 'maps', 'alamat kantor'] },
-      { url: 'produk.html',        keywords: ['produk', 'simpanan', 'pembiayaan', 'si rela', 'si pendi', 'si suqar', 'si fitri', 'si simka', 'haji', 'umroh', 'modal kerja', 'investasi', 'konsumtif', 'keanggotaan'] },
+      { url: 'produk.html',        keywords: ['produk', 'simpanan', 'pembiayaan', 'si rela', 'si pendi', 'si suqur', 'si fitri', 'si simka', 'haji', 'umroh', 'modal kerja', 'investasi', 'konsumtif', 'keanggotaan'] },
       { url: 'gallery.html',       keywords: ['gallery', 'galeri', 'foto', 'video', 'dokumentasi'] },
       { url: 'download.html',      keywords: ['download', 'unduh', 'brosur', 'formulir', 'syarat pengajuan'] },
       { url: 'kenapa-kami.html',   keywords: ['kenapa memilih kami', 'kenapa', 'alasan', 'kelebihan'] }

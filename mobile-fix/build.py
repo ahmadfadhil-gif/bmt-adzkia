@@ -15,6 +15,7 @@ HEAD_LINKS = """<link rel="icon" type="image/png" href="assets/logo-icon.png">
 <link rel="stylesheet" href="css/style.css">"""
 
 WA_LINK = "https://wa.me/6285878755748"
+WA_LINK_KANTOR = "https://wa.me/6285199603106"   # Tanya cara mendaftar & Syarat pengajuan
 PHONE_TEL = "+62287661386"
 PHONE_DISPLAY = "(0287) 661386"
 EMAIL = "ksppsdamba@gmail.com"
@@ -87,7 +88,7 @@ def header(active=""):
             <ul class="submenu">
               <li><a href="produk.html#si-rela">Si Rela (Simpanan Sukarela)</a></li>
               <li><a href="produk.html#si-pendi">Si Pendi (Simpanan Pendidikan)</a></li>
-              <li><a href="produk.html#si-suqar">Si Suqar (Simpanan Qurban/Aqiqah)</a></li>
+              <li><a href="produk.html#si-suqur">Si Suqur (Simpanan Qurban/Aqiqah)</a></li>
               <li><a href="produk.html#si-fitri">Si Fitri (Simpanan Idul Fitri)</a></li>
               <li><a href="produk.html#si-simka">Si Simka (Simpanan Mudharabah Berjangka)</a></li>
               <li><a href="produk.html#simpanan-haji">Simpanan Haji/Umroh</a></li>
@@ -236,7 +237,7 @@ index_body = f"""
     <div class="wrap">
       <div class="trust-item"><b>AHU-0000307.AH.01.38 / 2023</b><span>Nomor Badan Hukum</span></div>
       <div class="trust-item"><b>3305070150008</b><span>Nomor Induk Koperasi</span></div>
-      <div class="trust-item"><b>Ambal, Kebumen</b><span>Kantor pusat &amp; 3 unit layanan</span></div>
+      <div class="trust-item"><b>Ambal, Kebumen</b><span>Kantor pusat &amp; 4 unit layanan</span></div>
       <div class="trust-item"><b>Prinsip Syariah</b><span>Seluruh akad sesuai jati diri koperasi</span></div>
     </div>
   </section>
@@ -272,7 +273,7 @@ index_body = f"""
         <h3>Ingin tahu produk simpanan atau pembiayaan kami?</h3>
         <p>Hubungi kantor kami di jam operasional Senin – Jumat 08.00 – 15.00, Sabtu 08.00 – 12.00.</p>
       </div>
-      <a class="cc-btn solid" href="tel:+6285878755748">☎ +62 858-7875-5748</a>
+      <a class="cc-btn solid" href="tel:+6285199603106">☎ +62 851-9960-3106</a>
     </div>
   </section>
 """
@@ -412,8 +413,8 @@ legalitas_body = f"""
         <tr><th>Tanggal Berdiri</th><td>16 Januari 1997 (1417 H)</td></tr>
         <tr><th>No. Badan Hukum</th><td>AHU-0000307.AH.01.38 Tahun 2023</td></tr>
         <tr><th>Akta Badan Hukum (1998)</th><td>No. 13619/BH/KWK.11/III/1998</td></tr>
-        <tr><th>No. PAD</th><td class="field-empty">Belum diisi</td></tr>
-        <tr><th>No. Izin Usaha Simpan Pinjam (USP)</th><td class="field-empty">Belum diisi</td></tr>
+        <tr><th>No. PAD</th><td>518.08/13619/PAD/BH/XIV.12/III/2016</td></tr>
+        <tr><th>No. Izin Usaha Simpan Pinjam (USP)</th><td>0220008761374</td></tr>
         <tr><th>No. Induk Koperasi</th><td>3305070150008</td></tr>
         <tr><th>No. NPWP</th><td>1.627.714.7.523</td></tr>
         <tr><th>Akte Notaris</th><td class="field-empty">Belum diisi</td></tr>
@@ -570,14 +571,14 @@ sejarah_body = f"""
           <p>Berawal dari Kopontren (koperasi pondok pesantren) yang mengikuti pusat Cilacap, lalu dibina Kopsyah Cilacap dan Dinas Koperasi. Seiring regulasi, lembaga ini menjadi BMT Barokatul Adzkia, KSPPS DAMBA, dan kini KSPPS BMT Barokatul Adzkia Kebumen yang beroperasi di tingkat kabupaten. Karena regulasi KSPPS, usaha warung serba ada tidak dilanjutkan.</p>
         </div>
         <div class="tl-item">
-          <b>2023</b>
+          <b>2016</b>
           <h3>Perubahan Anggaran Dasar</h3>
-          <p>Perubahan Anggaran Dasar (PAD) tahun 2023.</p>
+          <p>Perubahan Anggaran Dasar (PAD) tahun 2016.</p>
         </div>
         <div class="tl-item">
           <b>Saat ini</b>
           <h3>Aset sekitar Rp23 miliar</h3>
-          <p>BMT memiliki kantor pusat, satu kantor cabang, dan dua kantor kas, dengan aset sekitar Rp23 miliar.</p>
+          <p>BMT memiliki kantor pusat, satu kantor cabang, dan tiga kantor kas, dengan aset sekitar Rp23 miliar.</p>
         </div>
       </div>
     </div>
@@ -593,8 +594,8 @@ sejarah_body = f"""
         <div class="vm-card">
           <h3>Pengurus</h3>
           <ul>
-            <li>Drs. Ashar Muhamadi, M.Ag. (ketua pertama)</li>
-            <li>Muhammad Danuri</li>
+            <li>Muhammad Danuri (ketua pertama)</li>
+            <li>Drs. Ashar Muhamadi, M.Ag.</li>
             <li>Azizil Karim</li>
             <li>Bambang Sudiyono, B.Sc</li>
             <li>Wiyono, M.M.Pd</li>
@@ -649,6 +650,11 @@ kantor_body = f"""
             <td>Jl. Raya Prembun, Desa Kabekelan, Kec. Prembun, Kab. Kebumen, Prov. Jawa Tengah</td>
             <td>Senin–Jumat 08.00–15.00, Sabtu 08.00–12.00</td>
           </tr>
+          <tr>
+            <td>Kantor Kas 3</td>
+            <td>Jl. Raya Kambalan, RT 01 RW 04, Kembangsawit, Kec. Ambal, Kab. Kebumen, Prov. Jawa Tengah</td>
+            <td>Senin–Jumat 08.00–15.00, Sabtu 08.00–12.00</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -696,8 +702,8 @@ produk_body = f"""
           <p>Diperuntukkan untuk kebutuhan biaya pendidikan pelajar dan mahasiswa.</p>
           <ul><li>Setoran awal Rp10.000, selanjutnya minimal Rp5.000</li></ul>
         </div>
-        <div class="product-card" id="si-suqar">
-          <h3>Si Suqar <span style="font-weight:400;color:var(--ink-soft)">(Simpanan Ahli Qurban/Aqiqah)</span></h3>
+        <div class="product-card" id="si-suqur">
+          <h3>Si Suqur <span style="font-weight:400;color:var(--ink-soft)">(Simpanan Ahli Qurban/Aqiqah)</span></h3>
           <p>Diperuntukkan untuk kebutuhan Qurban atau Aqiqah.</p>
           <ul><li>Setoran awal Rp10.000, selanjutnya minimal Rp5.000</li></ul>
         </div>
@@ -750,7 +756,7 @@ produk_body = f"""
         <ol class="syarat-list">
           <li>Fotokopi KTP pemohon</li>
           <li>Fotokopi Kartu Keluarga (KK)</li>
-          <li>Calon anggota di bawah umur: mendaftar atas nama orang tua. Sertakan fotokopi KK yang memuat nama anak, serta fotokopi KIA atau akta kelahiran anak</li>
+          <li>Untuk pendaftar yang di bawah umur wajib mendaftarkan atas nama orang tua. Sertakan fotokopi KK yang memuat nama anak, serta fotokopi KIA atau akta kelahiran anak</li>
         </ol>
         <h3 style="margin-top:22px">Simpanan keanggotaan</h3>
         <ol class="syarat-list">
@@ -765,7 +771,7 @@ produk_body = f"""
           <li>Serahkan formulir dan berkas ke kantor kami, lalu bayar simpanan pokok dan simpanan wajib</li>
         </ol>
         <p class="syarat-note">Formulir tersedia di halaman <a href="download.html#form-simpanan">Download</a>.</p>
-        <a class="cc-btn solid" href="{WA_LINK}" target="_blank" rel="noopener">Tanyakan cara mendaftar</a>
+        <a class="cc-btn solid" href="{WA_LINK_KANTOR}" target="_blank" rel="noopener">Tanyakan cara mendaftar</a>
       </div>
     </div>
   </section>
@@ -889,7 +895,7 @@ download_body = f"""
 {_syarat_li}
         </ol>
         <p class="syarat-note">Siapkan berkas di atas lalu serahkan ke kantor kami. Untuk pertanyaan, hubungi kami lewat WhatsApp atau telepon.</p>
-        <a class="cc-btn solid" href="{WA_LINK}" target="_blank" rel="noopener">Tanya via WhatsApp</a>
+        <a class="cc-btn solid" href="{WA_LINK_KANTOR}" target="_blank" rel="noopener">Tanya via WhatsApp</a>
       </div>
     </div>
   </section>
