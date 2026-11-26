@@ -46,19 +46,52 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Submenu seluler (mendukung dua tingkat)
-  document.querySelectorAll('.nav-list li').forEach(function (li) {
+  // Submenu: terbuka hanya saat diklik (komputer dan HP), mendukung dua tingkat
+  var allItems = document.querySelectorAll('.nav-list li');
+  var closeAllMenus = function () {
+    allItems.forEach(function (li) {
+      li.classList.remove('open');
+      var l = li.querySelector(':scope > a');
+      if (l && li.querySelector(':scope > .submenu')) l.setAttribute('aria-expanded', 'false');
+    });
+  };
+  allItems.forEach(function (li) {
     var link = li.querySelector(':scope > a');
     var submenu = li.querySelector(':scope > .submenu');
-    if (submenu && link) {
-      link.addEventListener('click', function (e) {
-        if (window.innerWidth <= 860) {
-          e.preventDefault();
-          e.stopPropagation();
-          li.classList.toggle('open');
+    if (!(submenu && link)) return;
+    link.setAttribute('aria-haspopup', 'true');
+    link.setAttribute('aria-expanded', 'false');
+    link.addEventListener('click', function (e) {
+      if (e.ctrlKey || e.metaKey || e.shiftKey) return;   // buka di tab baru tetap jalan
+      e.preventDefault();
+      e.stopPropagation();
+      var willOpen = !li.classList.contains('open');
+      // tutup menu lain di tingkat yang sama
+      Array.prototype.forEach.call(li.parentElement.children, function (sib) {
+        if (sib !== li) {
+          sib.classList.remove('open');
+          sib.querySelectorAll('.open').forEach(function (x) { x.classList.remove('open'); });
+          var sl = sib.querySelector(':scope > a');
+          if (sl) sl.setAttribute('aria-expanded', 'false');
         }
       });
+      li.classList.toggle('open', willOpen);
+      link.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      if (!willOpen) li.querySelectorAll('.open').forEach(function (x) { x.classList.remove('open'); });
+    });
+  });
+  // Pilih tujuan (tautan tanpa submenu) -> tutup semua menu
+  document.querySelectorAll('.submenu a').forEach(function (a) {
+    if (!a.parentElement.querySelector(':scope > .submenu')) {
+      a.addEventListener('click', closeAllMenus);
     }
+  });
+  // Klik di luar menu, atau tekan Esc -> tutup
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav-list')) closeAllMenus();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeAllMenus();
   });
 
   // Slider hero beranda
