@@ -430,3 +430,22 @@ footer{background:#0D2A1D;color:#C9D6CC;padding:50px 0 22px;font-size:14px}
   .branch-table td:nth-child(2)::before{content:"Alamat"}
   .branch-table td:nth-child(3)::before{content:"Kontak & jam operasional"}
 }
+
+/* ---------- Foto pengurus interaktif ---------- */
+.team-hint{margin:0 0 14px;color:rgba(255,255,255,.78);font-size:14px}
+.team-photo{position:relative;max-width:1400px;margin:0 auto}
+.team-photo>img{display:block;width:100%;height:auto}
+.hotspot{position:absolute;width:7.4%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;border:2px solid transparent;background:transparent;padding:0;cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent}
+.hotspot:hover,.hotspot:focus-visible,.hotspot.active{border-color:var(--gold);background:rgba(231,199,126,.18);box-shadow:0 0 0 4px rgba(231,199,126,.18);outline:none}
+.team-card{position:absolute;z-index:6;pointer-events:none;min-width:150px;max-width:240px;text-align:center;background:#0f2d1f;color:#fff;border:1px solid var(--gold);border-radius:10px;padding:10px 16px;box-shadow:0 10px 26px rgba(0,0,0,.4);opacity:0;visibility:hidden;transition:opacity .18s,visibility .18s}
+.team-card.show{opacity:1;visibility:visible}
+.team-card strong{display:block;font-family:'Lora',serif;font-size:16px;line-height:1.3}
+.team-card span{display:block;margin-top:3px;color:var(--gold-soft,#e7c77e);font-size:13px;font-weight:600}
+.team-card span:empty{display:none}
+.team-list{margin-top:34px;display:grid;gap:26px}
+.team-group h3{margin:0 0 12px;color:var(--gold-soft,#e7c77e);font-size:17px}
+.team-group ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.team-group li{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 16px;text-align:left}
+.team-group li b{display:block;color:#fff;font-size:15px}
+.team-group li span{display:block;margin-top:2px;color:var(--gold-soft,#e7c77e);font-size:13px}
+@media (max-width:700px){.hotspot{width:8.4%}.team-card{min-width:130px;padding:8px 12px}.team-card strong{font-size:14.5px}}

@@ -94,6 +94,44 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') closeAllMenus();
   });
 
+  // Foto pengurus interaktif: nama dan jabatan muncul saat diarahkan / diketuk
+  var teamPhoto = document.getElementById('teamPhoto');
+  if (teamPhoto) {
+    var tCard = document.getElementById('teamCard');
+    var tSpots = teamPhoto.querySelectorAll('.hotspot');
+    var pinned = null;
+    var placeCard = function (h) {
+      tCard.querySelector('strong').textContent = h.dataset.name || '';
+      tCard.querySelector('span').textContent = h.dataset.role || '';
+      var box = teamPhoto.getBoundingClientRect(), r = h.getBoundingClientRect();
+      var cx = r.left - box.left + r.width / 2, half = tCard.offsetWidth / 2;
+      cx = Math.max(half, Math.min(box.width - half, cx));
+      tCard.style.left = cx + 'px';
+      tCard.style.top = (r.bottom - box.top + 8) + 'px';   // selalu di bawah wajah, tidak menutupi orang lain
+      tCard.style.transform = 'none';
+      tCard.classList.add('show');
+    };
+    var clearTeam = function () {
+      tCard.classList.remove('show'); pinned = null;
+      tSpots.forEach(function (x) { x.classList.remove('active'); });
+    };
+    tSpots.forEach(function (h) {
+      h.addEventListener('mouseenter', function () { if (!pinned) placeCard(h); });
+      h.addEventListener('mouseleave', function () { if (!pinned) tCard.classList.remove('show'); });
+      h.addEventListener('focus', function () { if (!pinned) placeCard(h); });
+      h.addEventListener('blur', function () { if (!pinned) tCard.classList.remove('show'); });
+      h.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (pinned === h) { clearTeam(); return; }
+        tSpots.forEach(function (x) { x.classList.remove('active'); });
+        pinned = h; h.classList.add('active'); placeCard(h);
+      });
+    });
+    document.addEventListener('click', function (e) { if (!e.target.closest('.hotspot')) clearTeam(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clearTeam(); });
+    window.addEventListener('resize', clearTeam);
+  }
+
   // Slider hero beranda
   var slides = document.querySelectorAll('.hero-slide');
   if (slides.length) {
