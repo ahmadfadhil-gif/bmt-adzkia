@@ -509,3 +509,28 @@ footer{background:#0D2A1D;color:#C9D6CC;padding:50px 0 22px;font-size:14px}
   .org-tree>li::before,.org-tree>li::after{display:none}
   .org-div::before{left:-22px;bottom:auto;top:26px;width:22px;height:0;border-left:none;border-top:2px solid var(--ol)}
 }
+
+/* ===== Gallery ===== */
+.gal-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+.gal-chip{font:inherit;font-size:14px;font-weight:600;padding:8px 15px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink-soft);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.gal-chip:hover{border-color:var(--blue);color:var(--blue)}
+.gal-chip.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.gal-event{margin:0 0 46px;scroll-margin-top:90px}
+.gal-event[hidden]{display:none}
+.gal-event-head{margin:0 0 16px;padding-left:14px;border-left:4px solid var(--gold)}
+.gal-event-head h3{margin:0 0 4px;font-size:22px;color:var(--navy)}
+.gal-event-head p{margin:0;font-size:14px;color:var(--ink-soft)}
+.gal-cols{column-count:3;column-gap:12px}
+.gal-photo{display:block;break-inside:avoid;margin:0 0 12px;border-radius:8px;overflow:hidden;background:var(--blue-soft);line-height:0;position:relative}
+.gal-photo img{width:100%;height:auto;display:block;transition:transform .35s}
+.gal-photo:hover img{transform:scale(1.04)}
+@media (max-width:760px){.gal-cols{column-count:2;column-gap:8px}.gal-photo{margin-bottom:8px}.gal-event-head h3{font-size:19px}}
+.lb{position:fixed;inset:0;z-index:9999;background:#0b1610;display:none;align-items:center;justify-content:center;flex-direction:column;padding:56px 12px 70px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;user-select:none}
+.lb-cap{position:absolute;left:0;right:0;bottom:0;padding:14px 64px;color:#fff;text-align:center;font-size:14px;line-height:1.4}
+.lb-cap small{display:block;color:#CFE3D8;margin-top:2px}
+.lb button{position:absolute;border:0;background:rgba(255,255,255,.14);color:#fff;width:44px;height:44px;border-radius:50%;font-size:22px;cursor:pointer;line-height:1}
+.lb button:hover{background:rgba(255,255,255,.28)}
+.lb-x{top:10px;right:10px}.lb-p{left:10px;top:50%;margin-top:-22px}.lb-n{right:10px;top:50%;margin-top:-22px}
+@media (max-width:600px){.lb-p,.lb-n{top:auto;bottom:10px;margin:0}.lb-cap{padding:14px 64px}}

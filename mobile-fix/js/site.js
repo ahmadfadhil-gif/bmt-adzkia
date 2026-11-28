@@ -276,3 +276,60 @@ document.addEventListener('DOMContentLoaded', function () {
   // Jaga-jaga kalau ada aset yang lambat/gagal dimuat, tetap hilang setelah 6 detik
   setTimeout(hideLoader, 6000);
 })();
+
+/* ===== Gallery: filter kegiatan + lightbox ===== */
+(function(){
+  var evs = document.querySelectorAll('.gal-event');
+  if(!evs.length) return;
+  var chips = document.querySelectorAll('.gal-chip');
+  function applyFilter(f){
+    chips.forEach(function(c){ c.classList.toggle('on', c.getAttribute('data-f')===f); });
+    evs.forEach(function(e){ e.hidden = !(f==='all' || e.getAttribute('data-ev')===f); });
+  }
+  chips.forEach(function(c){ c.addEventListener('click', function(){ applyFilter(c.getAttribute('data-f')); }); });
+  var h = (location.hash||'').replace('#','');
+  if(h && document.querySelector('.gal-chip[data-f="'+h+'"]')) applyFilter(h);
+
+  var lb = document.createElement('div');
+  lb.className = 'lb'; lb.setAttribute('role','dialog'); lb.setAttribute('aria-modal','true'); lb.setAttribute('aria-label','Tampilan foto');
+  lb.innerHTML = '<button class="lb-x" aria-label="Tutup">\u00d7</button><button class="lb-p" aria-label="Sebelumnya">\u2039</button><img alt=""><button class="lb-n" aria-label="Berikutnya">\u203a</button><div class="lb-cap"></div>';
+  document.body.appendChild(lb);
+  var img = lb.querySelector('img'), cap = lb.querySelector('.lb-cap');
+  var list = [], idx = 0, lastFocus = null;
+  function show(i){
+    idx = (i + list.length) % list.length;
+    var a = list[idx];
+    img.src = a.getAttribute('href');
+    img.alt = a.getAttribute('data-cap') || '';
+    cap.innerHTML = '';
+    var t = document.createElement('div'); t.textContent = a.getAttribute('data-cap') || '';
+    var s = document.createElement('small'); s.textContent = (idx+1) + ' / ' + list.length;
+    cap.appendChild(t); cap.appendChild(s);
+  }
+  function open(a){
+    var ev = a.closest('.gal-event');
+    list = Array.prototype.slice.call(ev.querySelectorAll('.gal-photo'));
+    lastFocus = a; lb.classList.add('open'); document.body.style.overflow = 'hidden';
+    show(list.indexOf(a)); lb.querySelector('.lb-x').focus();
+  }
+  function close(){ lb.classList.remove('open'); document.body.style.overflow=''; img.removeAttribute('src'); if(lastFocus) lastFocus.focus(); }
+  document.querySelectorAll('.gal-photo').forEach(function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); open(a); });
+  });
+  lb.querySelector('.lb-x').addEventListener('click', close);
+  lb.querySelector('.lb-p').addEventListener('click', function(){ show(idx-1); });
+  lb.querySelector('.lb-n').addEventListener('click', function(){ show(idx+1); });
+  lb.addEventListener('click', function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='ArrowLeft') show(idx-1);
+    else if(e.key==='ArrowRight') show(idx+1);
+  });
+  var x0 = null;
+  lb.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', function(e){
+    if(x0===null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if(Math.abs(dx) > 50) show(idx + (dx<0 ? 1 : -1));
+  }, {passive:true});
+})();
